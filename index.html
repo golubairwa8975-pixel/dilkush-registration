@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DILKUSH REGISTRATION</title>
+<style>
+body{margin:0;background:#0b0b10;color:white;font-family:Arial,sans-serif;padding:24px 16px}
+.card{max-width:420px;margin:25px auto;background:#171721;border-radius:18px;padding:24px;box-sizing:border-box}
+h1{text-align:center;color:#c084fc;font-size:25px}
+p{text-align:center;color:#ccc}
+.amount{text-align:center;font-size:36px;font-weight:bold;margin:24px}
+.qr{background:white;color:#222;padding:25px;text-align:center;border-radius:12px;margin:20px 0}
+button{width:100%;padding:15px;background:#7c3aed;color:white;border:0;border-radius:10px;font-size:17px;margin-top:12px}
+input{box-sizing:border-box;width:100%;padding:14px;margin:8px 0 15px;border-radius:8px;border:1px solid #555;background:#101018;color:white}
+label{display:block}
+.note{font-size:12px;color:#facc15}
+#form{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>DILKUSH REGISTRATION</h1>
+<div id="payment">
+<p>PAYMENT PAGE</p>
+<div class="amount">₹200</div>
+<div class="qr">
+<strong>PHONEPE QR</strong>
+<p style="color:#333">Your payment QR image will be added here.</p>
+</div>
+<p>Scan and pay ₹200 using PhonePe.</p>
+<p class="note">Continue does not verify payment.</p>
+<button onclick="showForm()">Continue</button>
+</div>
+<div id="form">
+<h2>Registration Form</h2>
+<form onsubmit="event.preventDefault();alert('Demo only. Details have not been saved.');">
+<label>Full Name</label>
+<input name="name" placeholder="Enter your name" required>
+<label>Mobile Number</label>
+<input name="mobile" type="tel" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+<label>Email Address</label>
+<input name="email" type="email" placeholder="Enter your email" required>
+<button type="submit">Submit Registration</button>
+</form>
+<button onclick="backToPayment()">Back to Payment</button>
+<p class="note">Demo only: payment is not verified and details are not saved.</p>
+</div>
+</div>
+<script>
+function showForm(){
+ document.getElementById('payment').style.display='none';
+ document.getElementById('form').style.display='block';
+}
+function backToPayment(){
+ document.getElementById('form').style.display='none';
+ document.getElementById('payment').style.display='block';
+}
+</script>
+</body>
+</html>
